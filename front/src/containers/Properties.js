@@ -38,7 +38,7 @@ class Properties extends React.Component {
         return(
           <div>
           <h2>Hi Im properties container</h2>
-          <PropertiesList data={this.state.properties}/>
+          <PropertiesList data={this.state.properties._embedded.properties}/>
         </div>
         )
     }
