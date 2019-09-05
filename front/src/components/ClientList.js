@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from "react";
 import "./ClientList.css"
 
-class ClientList extends Component {
+const ClientList = (props) => {
 
-  render(){
+  
 
-    const clientsComponents = this.props.data.map( (clientInfo) => {
+
+    const clientsComponents = props.data.map( (clientInfo, index) => {
       
       const enquieries = clientInfo._embedded.enquieries.map((enquieries) => { 
         return(
@@ -17,25 +18,37 @@ class ClientList extends Component {
         )
 
       })
-      
+
+
       return(
-        <div className="propertyDetail" key={clientInfo.id}>
-          <h3>{clientInfo.name}</h3> 
-          <h3>{clientInfo.email}</h3>
-          {enquieries}
-        </div>
+       
+          <button value={index} className="ClientDetail" key={clientInfo.id} onClick={handleChange}>
+            {clientInfo.name}
+          </button>
+          // <div className="content">
+          //   {enquieries}
+          // </div>
+      
       ) 
     })
 
-console.log(this.props.data);
+      function handleChange(event) {
+       props.onClientSelect(event.target.value);
+        
+      }
+    console.log(props.data);
 
     return(
-      <div>
-        <h1>Client List</h1>
-        {clientsComponents}
+      <div className="ClientList">
+        <div>
+          <h1>Client List</h1>
+        </div>
+        <div>
+          {clientsComponents}
+        </div>
       </div>
     )
-  }
+  
 }
 
 export default ClientList

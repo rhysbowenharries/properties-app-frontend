@@ -1,5 +1,7 @@
 import React,{Fragment, Component} from 'react';
 import ClientList from '../components/ClientList'
+import ClientDetail from '../components/ClientDetail'
+import './Clients.css'
 
 class Clients extends React.Component {
 
@@ -8,8 +10,11 @@ class Clients extends React.Component {
 
       this.state = {
           loading: 'initial',
-          clients: []
-        };
+          clients: [],
+          selctedClient: null
+      };
+
+      this.handleClientSelection = this.handleClientSelection.bind(this)
   }  
   
   componentDidMount() {
@@ -24,6 +29,13 @@ class Clients extends React.Component {
     .catch(err => console.error);
   }
 
+  handleClientSelection(index){
+    console.log("index",index);
+    
+    const onClickClient = this.state.clients._embedded.bidders[index]
+    this.setState({selctedClient:onClickClient})
+  }
+
   render(){
 
 
@@ -36,9 +48,11 @@ class Clients extends React.Component {
       }
 
       return(
-        <div>
-        <h2>Hi Im clients container</h2>
-        <ClientList data={this.state.clients._embedded.bidders}/>
+        <div className="Clients">
+        <ClientList data={this.state.clients._embedded.bidders}
+        onClientSelect= {this.handleClientSelection}
+        />
+        <ClientDetail client={this.state.selctedClient}/>
       </div>
       )
   }

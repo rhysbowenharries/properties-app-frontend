@@ -1,0 +1,13 @@
+.enquieries{
+  padding: 1em;
+  display: grid;
+  font-size: 150%;
+   grid-row-gap: 0.3em;
+}
+
+.enquieries > div{
+ 
+  display: grid;
+ 
+}
+

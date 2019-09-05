@@ -1,0 +1,14 @@
+.ClientList{
+  padding: 1em;
+  display: grid;
+  
+}
+
+.ClientList > div{
+ 
+  display: grid;
+}
+
+.ClientDetail{
+  font-size: 150%;
+}

@@ -5,3 +5,9 @@
 .App .navbar-brand {
   font-weight: bold;
 }
+
+.App > div {
+  background: #f2f2f2;
+  padding: 1em;
+  gap: 1 em;
+}

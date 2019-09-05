@@ -55,7 +55,7 @@ class App extends Component {
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/">D-Lux Properties</Link>
+            <Link to="/properties">D-Lux Properties</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
