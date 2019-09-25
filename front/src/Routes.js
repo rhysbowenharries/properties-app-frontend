@@ -18,6 +18,7 @@ export default ({ childProps }) =>
     <AuthenticatedRoute path="/clients" exact component={Clients} props={childProps} />
     <AuthenticatedRoute path="/" exact component={Properties} props={childProps} />
     <AuthenticatedRoute path="/properties" exact component={Properties} props={childProps} />
+    
 
     { /* Finally, catch all unmatched routes */ }
     <Route component={NotFound} />

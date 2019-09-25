@@ -2,12 +2,21 @@
   padding: 1em;
   display: grid;
   font-size: 150%;
-   grid-row-gap: 0.3em;
+  grid-row-gap: 0.3em;
+  
 }
 
-.enquieries > div{
- 
+.enquieries > button{
+
   display: grid;
- 
+  text-align: left;
 }
 
+.link, .link:hover{
+
+  display: grid;
+  text-align: left;
+  color: black;
+  text-decoration: none;
+  
+}

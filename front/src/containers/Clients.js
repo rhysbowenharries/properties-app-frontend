@@ -30,7 +30,6 @@ class Clients extends React.Component {
   }
 
   handleClientSelection(index){
-    console.log("index",index);
     
     const onClickClient = this.state.clients._embedded.bidders[index]
     this.setState({selctedClient:onClickClient})
